@@ -184,9 +184,9 @@ def show_prediction_labels_on_image(img_path, predictions):
 if __name__ == "__main__":
     # STEP 1: Train the KNN classifier and save it to disk
     # Once the model is trained and saved, you can skip this step next time.
-    print("Training KNN classifier...")
-    classifier = train("knn_examples/train", model_save_path="trained_knn_model.clf", n_neighbors=2)
-    print("Training complete!")
+    #print("Training KNN classifier...")
+    #classifier = train("knn_examples/train", model_save_path="trained_knn_model.clf", n_neighbors=2)
+    #print("Training complete!")
 
     # STEP 2: Using the trained classifier, make predictions for unknown images
     for image_file in os.listdir("knn_examples/test"):
@@ -196,7 +196,7 @@ if __name__ == "__main__":
 
         # Find all people in the image using a trained classifier model
         # Note: You can pass in either a classifier file name or a classifier model instance
-        predictions = predict(full_file_path, model_path="trained_knn_model.clf")
+        predictions = predict(full_file_path, model_path="knn_model/trained_knn_model.clf")
 
         # Print results on the console
         for name, (top, right, bottom, left) in predictions:
